@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Artist.associate = function(models) {
-    Artist.hasMany(models.Issue, {
+    Artist.belongsToMany(models.Issue, {
       foreignKey: 'artistId',
       otherKey: "issueId",
       through: "ArtistToIssue"
