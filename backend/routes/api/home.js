@@ -14,13 +14,10 @@ router.get("/", async(req, res) => {
 
 router.get("/:socialIssue", async(req, res) => {
     const issue = req.params.socialIssue;
-    console.log("start of route")
-    // console.log(getAuthToken)
     let newAuthToken = await getAuthToken();
-    console.log(newAuthToken);
 
     if (issue === "Climate Change"){
-        const artist = await fetch("https://api.spotify.com/v1/artists/6qqNVTkY8uBg9cP3Jd7DAH",
+        const artist = await fetch("https://api.spotify.com/v1/artists?ids=6qqNVTkY8uBg9cP3Jd7DAH,4STHEaNw4mPZ2tzheohgXB,73sIBHcqh3Z3NyqHKZ7FOL,0xOeVMOz2fVg5BJY3N6akT,00FQb4jTyendYWaN8pK0wa",
         {
             headers: {
                 "Accept": "application/json",

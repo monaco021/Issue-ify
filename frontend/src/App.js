@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SocialIssues from "./components/Home";
+import ListedArtists from "./components/IssuePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/" exact>
             <SocialIssues />
+          </Route>
+          <Route path="/:socialIssue">
+            <ListedArtists />
           </Route>
         </Switch>
       )}

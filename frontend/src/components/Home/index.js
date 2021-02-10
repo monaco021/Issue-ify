@@ -6,20 +6,20 @@ import {getIssues} from "../../store/home"
 export default function SocialIssues () {
   const dispatch = useDispatch();
   const causes = useSelector((state) => state.issue);
-  console.log("hello: ", causes)
   useEffect(() => {
     dispatch(getIssues());
   }, [dispatch]);
 
   return (
       <div>
-          <h1>Hello</h1>
           <div>
             {causes && causes.map((cause) => {
               return (
-                <div>
-                  {cause.socialIssue}
-                </div>
+                <Link key={`${cause.id}`} to={`${cause.socialIssue}`}>
+                  <div>
+                    {cause.socialIssue}
+                  </div>
+                </Link>
               )
             })}
           </div>
