@@ -8,9 +8,7 @@ const load = tracksArray => ({
 });
 
 export const getTracks = (albumId) => async dispatch => {
-    console.log("before fetch of albums")
     const res = await fetch(`/api/album/${albumId}`);
-    console.log("after fetch of albums")
     if (res.ok) {
         dispatch(load(res.data));
     }
