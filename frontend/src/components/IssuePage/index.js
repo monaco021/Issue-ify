@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 export default function ListedArtists() {
     const dispatch = useDispatch();
     const singers = useSelector((state) => state.artists.artists);
-    const user = useSelector(state => state.session.user)
+    // const user = useSelector(state => state.session.user)
     const { socialIssue } = useParams();
 
     useEffect(() => {

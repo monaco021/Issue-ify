@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 export default function ListedAlbums() {
     const dispatch = useDispatch();
     const albums = useSelector((state) => state.albums.items);
-    const user = useSelector(state => state.session.user)
+    // const user = useSelector(state => state.session.user)
     const { spotifyId } = useParams();
 
     useEffect(() => {
@@ -19,12 +19,12 @@ export default function ListedAlbums() {
            {albums && albums.map((album) => {
                return (
 
-                   <div key={album.id}>
+                   <Link key={album.id} to={`/album/${album.id}`}>
                        <img key={album.images[0].url} src={album.images[0].url} />
-                       <div>
+                       <div key={album.name}>
                            {album.name}
                        </div>
-                   </div>
+                   </Link>
                )
            })}
         </div>
