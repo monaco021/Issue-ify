@@ -4,19 +4,29 @@ import { Link } from 'react-router-dom';
 import {getAlbums} from "../../store/albums";
 import { useParams } from "react-router-dom";
 
-export default function ListedTracks() {
+export default function ListedAlbums() {
     const dispatch = useDispatch();
-    const tracks = useSelector((state) => state.tracks.items);
+    const albums = useSelector((state) => state.albums.items);
     const user = useSelector(state => state.session.user)
-    const { albumId } = useParams();
+    const { spotifyId } = useParams();
 
     useEffect(() => {
-        dispatch(getAlbums(albumId));
+        dispatch(getAlbums(spotifyId));
     }, [dispatch]);
 
     return (
         <div>
-           <h1>Hello</h1>
+           {albums && albums.map((album) => {
+               return (
+
+                   <div key={album.id}>
+                       <img key={album.images[0].url} src={album.images[0].url} />
+                       <div>
+                           {album.name}
+                       </div>
+                   </div>
+               )
+           })}
         </div>
     )
 }
