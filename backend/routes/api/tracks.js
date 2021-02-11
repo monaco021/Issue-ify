@@ -6,12 +6,12 @@ const fetch = require("node-fetch");
 
 const router = express.Router();
 
-router.get("/:spotifyId", async(req, res) => {
-    const artist = req.params.spotifyId;
+router.get("/:albumId", async(req, res) => {
+    const album = req.params.albumId;
 
     let newAuthToken = await getAuthToken();
 
-    const albums = await fetch(`https://api.spotify.com/v1/artists/${artist}/albums?include_groups=album,single&market=US`,
+    const tracks = await fetch(`https://api.spotify.com/v1/albums/${album}/tracks?market=US`,
         {
             headers: {
                 "Accept": "application/json",
@@ -20,8 +20,11 @@ router.get("/:spotifyId", async(req, res) => {
             }
         }
     )
-    const artistAlbums = await albums.json();
-    return res.json(artistAlbums);
+
+    const albumTracks = await tracks.json();
+    console.log("tracks:", albumTracks)
+    return res.json(albumTracks);
+
 })
 
 

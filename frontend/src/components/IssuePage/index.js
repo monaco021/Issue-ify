@@ -9,25 +9,24 @@ export default function ListedArtists() {
     const singers = useSelector((state) => state.artists.artists);
     const user = useSelector(state => state.session.user)
     const { socialIssue } = useParams();
-    console.log("singers:", singers)
+
     useEffect(() => {
-        console.log("before dispatch")
         dispatch(getArtists(socialIssue));
-        console.log("after dispatch")
+        console.log("social Issue:",socialIssue)
     }, [dispatch]);
 
     return (
         <div>
             {singers && singers.map((singer) => {
                 return (
-                    <div>
+                    <Link key={`${singer.id}`} to={`/artists/${singer.id}`}>
                         <div key={singer.name}>
                             {singer.name}
                         </div>
                         <img key={singer.images[0].url} src={singer.images[0].url}>
 
                         </img>
-                    </div>
+                    </Link>
                 )
             })}
         </div>

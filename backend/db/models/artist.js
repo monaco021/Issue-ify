@@ -1,10 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Artist = sequelize.define('Artist', {
-    spotifyId: {
-      type: DataTypes.INTEGER,
+    artistName: {
+      type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    spotifyId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   }, {});
   Artist.associate = function(models) {
     Artist.belongsToMany(models.Issue, {

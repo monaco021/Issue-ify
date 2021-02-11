@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const homeRouter = require("./home.js")
-// const spotifyRouter = require("./spotify.js")
+const homeRouter = require("./home.js");
+const albumRouter = require("./album.js");
+const trackRouter = require("./tracks.js");
 
 // GET /api/set-token-cookie
 const asyncHandler = require('express-async-handler');
@@ -23,6 +24,7 @@ router.get(
 
 // GET /api/restore-user
 const { restoreUser } = require('../../utils/auth.js');
+const { route } = require('./album.js');
 router.get('/restore-user', restoreUser, (req, res) => {
   return res.json(req.user);
 });
@@ -45,9 +47,10 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-// router.use("/token", spotifyRouter)
+router.use("/", homeRouter);
 
-router.use("/", homeRouter)
+router.use("/artists", albumRouter)
 
+router.use("/album", trackRouter)
 
 module.exports = router;

@@ -8,10 +8,7 @@ const load = artists => ({
 });
 
 export const getArtists = (socialIssue) => async dispatch => {
-    console.log("before the fetch")
     const res = await fetch(`/api/${socialIssue}`);
-    console.log("res:", res)
-    console.log("res.data:", res.data)
     if (res.ok) {
         dispatch(load(res.data));
     }

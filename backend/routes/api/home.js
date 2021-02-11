@@ -23,11 +23,14 @@ router.get("/:socialIssue", async(req, res) => {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${newAuthToken}`
-            }})
+            }
+        })
         const singer = await artist.json();
-        console.log("hello:", singer);
+        // console.log("hello:", singer);
 
         return res.json(singer);
+    } else {
+        return "Nothing here"
     }
 });
 
