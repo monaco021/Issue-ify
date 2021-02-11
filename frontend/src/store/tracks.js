@@ -7,7 +7,7 @@ const load = tracksArray => ({
     tracksArray,
 });
 
-export const getAlbums = (albumId) => async dispatch => {
+export const getTracks = (albumId) => async dispatch => {
     console.log("before fetch of albums")
     const res = await fetch(`/api/album/${albumId}`);
     console.log("after fetch of albums")
@@ -16,7 +16,7 @@ export const getAlbums = (albumId) => async dispatch => {
     }
 }
 
-const AlbumsReducer = (state = [], action) => {
+const TracksReducer = (state = [], action) => {
     switch(action.type) {
         case LOAD: {
             return action.tracksArray
@@ -26,4 +26,4 @@ const AlbumsReducer = (state = [], action) => {
     }
 };
 
-export default AlbumsReducer;
+export default TracksReducer;

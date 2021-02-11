@@ -7,7 +7,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SocialIssues from "./components/Home";
 import ListedArtists from "./components/IssuePage/index";
-import ListedAlbums from "./components/Albums/index"
+import ListedAlbums from "./components/Albums/index";
+import ListedTracks from "./components/Tracks/index";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/artists/:spotifyId" exact>
             <ListedAlbums />
+          </Route>
+          <Route path="/album/:albumId" exact>
+            <ListedTracks />
           </Route>
         </Switch>
       )}
