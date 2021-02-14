@@ -1,0 +1,18 @@
+.album__image_container{
+    height: 250px;
+    box-shadow: 10px 5px 5px grey;
+}
+
+.albums__div_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.album__name_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}

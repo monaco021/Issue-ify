@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import {getTracks} from "../../store/tracks";
@@ -7,21 +7,15 @@ import { useParams } from "react-router-dom";
 export default function ListedTracks() {
     const dispatch = useDispatch();
     const tracks = useSelector((state) => state.tracks.items);
-    // const user = useSelector(state => state.session.user)
-    const album = useSelector(state => state.albums.items)
+    const albums = useSelector((state) => state.albums.items);
     const { albumId } = useParams();
 
 
     useEffect(() => {
         dispatch(getTracks(albumId));
+        // console.log(albums[0].images[0].url)
     }, [dispatch]);
 
-
-    // const result = album.filter(a => {
-    //     if (albumId === a.id){
-    //         return a.images[0].id
-    //     }
-    // });
 
     return (
         <div>
@@ -31,8 +25,11 @@ export default function ListedTracks() {
                         <div key={track.name}>
                             {track.name}
                         </div>
-                        {/* <img src={result}>
-                        </img> */}
+                        <div>
+                            <a href={track.external_urls.spotify}>Open me in Spotify!</a>
+                            {/* <audio src={track.preview_url}>Play me!</audio> */}
+                        </div>
+                        {/* <img src={albums[0].images[0].url}></img> */}
                     </div>
                 )
             })}

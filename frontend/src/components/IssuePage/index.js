@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {getArtists} from "../../store/issuePage"
 import { useParams } from "react-router-dom";
+import "./artists.css"
 
 export default function ListedArtists() {
     const dispatch = useDispatch();
@@ -12,23 +13,25 @@ export default function ListedArtists() {
 
     useEffect(() => {
         dispatch(getArtists(socialIssue));
-        console.log("social Issue:",socialIssue)
     }, [dispatch]);
 
     return (
-        <div>
-            {singers && singers.map((singer) => {
-                return (
-                    <Link key={`${singer.id}`} to={`/artists/${singer.id}`}>
-                        <div key={singer.name}>
-                            {singer.name}
-                        </div>
-                        <img key={singer.images[0].url} src={singer.images[0].url}>
-
-                        </img>
-                    </Link>
-                )
-            })}
-        </div>
+        <>
+            <div>
+                {socialIssue}
+            </div>
+            <div className="artist__list_container">
+                {singers && singers.map((singer) => {
+                    return (
+                        <Link key={`${singer.id}`} to={`/artists/${singer.id}`}>
+                            <img className="artist__image_container" key={singer.images[0].url} src={singer.images[0].url}></img>
+                            <div className="artist__name_container" key={singer.name}>
+                                {singer.name}
+                            </div>
+                        </Link>
+                    )
+                })}
+            </div>
+        </>
     )
 }
