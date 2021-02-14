@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import {getTracks} from "../../store/tracks";
 import { useParams } from "react-router-dom";
+import spotifyPic from "./spotify.png"
 
 export default function ListedTracks() {
     const dispatch = useDispatch();
@@ -28,6 +29,9 @@ export default function ListedTracks() {
                         <div>
                             <a href={track.external_urls.spotify}>Open me in Spotify!</a>
                             {/* <audio src={track.preview_url}>Play me!</audio> */}
+                        </div>
+                        <div>
+                            <img src={spotifyPic}></img>
                         </div>
                         {/* <img src={albums[0].images[0].url}></img> */}
                     </div>

@@ -20,16 +20,16 @@ export const addArtistForm = (newForm) => async(dispatch) => {
     }
 };
 
-const FormReducer = (state = [], action) => {
-    switch(action.type) {
-        case ADD: {
-            newState = Object.assign({}, state);
-            newState.forms = [...newState.forms, action.payload]
-            return action.newState
-        }
-        default:
-        return state;
-    }
-};
+// const FormReducer = (state = [], action) => {
+//     switch(action.type) {
+//         case ADD: {
+//             newState = Object.assign({}, state);
+//             newState.forms = [...newState.forms, action.payload]
+//             return action.newState
+//         }
+//         default:
+//         return state;
+//     }
+// };
 
-export default FormReducer;
+// export default FormReducer;
