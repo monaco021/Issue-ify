@@ -8,6 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background-color: lavenderblush;
 }
 
 .issue__text_container {

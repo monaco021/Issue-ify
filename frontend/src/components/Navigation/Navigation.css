@@ -3,7 +3,9 @@
 }
 
 .navBar__links{
-
+  display: flex;
+  justify-content: space-around;
+  color: black;
 }
 
 .navBar__container{
