@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 
 const router = express.Router();
 
-router.get("/", async(req, res) => {
+router.get("/submittedForms", async(req, res) => {
     const submittedForms = await Form.findAll();
 
     return res.json(submittedForms);
@@ -26,7 +26,6 @@ router.post("/addArtist", async(req,res) => {
         reason
     });
 
-    res.redirect("/");
     return res.json({newForm});
 })
 

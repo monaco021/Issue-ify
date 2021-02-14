@@ -5,6 +5,7 @@ import IssueReducer from "./home";
 import ArtistsReducer from './issuePage.js';
 import AlbumsReducer from "./albums.js";
 import TracksReducer from "./tracks.js";
+// import FormReducer from "./addArtistForm"
 
 const rootReducer = combineReducers({
   session,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   artists: ArtistsReducer,
   albums: AlbumsReducer,
   tracks: TracksReducer,
+  // form: FormReducer
 });
 
 let enhancer;

@@ -9,6 +9,8 @@ import SocialIssues from "./components/Home";
 import ListedArtists from "./components/IssuePage/index";
 import ListedAlbums from "./components/Albums/index";
 import ListedTracks from "./components/Tracks/index";
+import ListedArtistForm from "./components/AddArtistForm/index";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +41,9 @@ function App() {
           </Route>
           <Route path="/album/:albumId" exact>
             <ListedTracks />
+          </Route>
+          <Route path="/form" exact>
+            <ListedArtistForm />
           </Route>
         </Switch>
       )}
