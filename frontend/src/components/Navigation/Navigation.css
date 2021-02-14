@@ -1,3 +1,11 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.navBar__links{
+
+}
+
+.navBar__container{
+  height: 50px;
+}
