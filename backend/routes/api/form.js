@@ -12,6 +12,7 @@ router.get("/", async(req, res) => {
     return res.json(submittedForms);
 });
 
+//need to relook at
 router.post("/addArtist", async(req,res) => {
     const {
         artistName,
