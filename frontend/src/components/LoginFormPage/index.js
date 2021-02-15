@@ -32,7 +32,7 @@ function LoginFormPage() {
           ))}
         </ul>
         <label>
-          Username or Email
+          Username
           <input
             type="text"
             value={credential}

@@ -28,21 +28,21 @@ function SignupFormPage() {
   };
 
   return (
-    <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="signup__div_container" >
+      <form className="signup__form_container" onSubmit={handleSubmit}>
+        <h1>Sign Up</h1>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        <label>
+        {/* <label className="email__label_container">
           Email
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-          />
-        </label>
+          /> */}
+        {/* </label> */}
         <label>
           Username
           <input
@@ -72,7 +72,7 @@ function SignupFormPage() {
         </label>
         <button type="submit">Sign Up</button>
       </form>
-    </>
+    </div>
   );
 }
 
