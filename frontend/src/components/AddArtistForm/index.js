@@ -9,20 +9,6 @@ export default function ListedArtistForm() {
     const [socialIssue, setSocialIssue] = useState("");
     const [reason, setReason] = useState("");
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     const formInfo = {
-    //         artistName,
-    //         socialIssue,
-    //         reason,
-    //         submittedOn: new Date()
-    //     }
-
-    //     setArtistName("");
-    //     setSocialIssue("");
-    //     setReason("");
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
