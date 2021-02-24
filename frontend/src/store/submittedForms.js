@@ -14,14 +14,14 @@ export const getForms = () => async dispatch => {
     }
 }
 
-const IssueReducer = (state = [], action) => {
+const FormReducer = (state = [], action) => {
     switch(action.type) {
         case LOAD: {
-            return action.issues
+            return action.forms
         }
         default:
         return state;
     }
 };
 
-export default IssueReducer;
+export default FormReducer;
