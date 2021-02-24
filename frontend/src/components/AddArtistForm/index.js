@@ -28,7 +28,7 @@ export default function ListedArtistForm() {
     };
 
     return(
-        <div>
+        <div className="outsideArtist__div_container">
             <h1 className="outsideDiv__h1_container">Dont' see an Artist or want one changed? Fill out this form!</h1>
             <form className="artist__form_container">
                 <label>Name:</label>
@@ -55,12 +55,14 @@ export default function ListedArtistForm() {
                     onChange={(e) => setReason(e.target.value)}
                     value={reason}
                 />
-                <button
-                id='reserve_button'
-                onClick={handleSubmit}
-                >
-                Submit
-                </button>
+                <div className="artistBttn__div_container">
+                    <button
+                    id='reserve_button'
+                    onClick={handleSubmit}
+                    >
+                    Submit
+                    </button>
+                </div>
             </form>
         </div>
     )
