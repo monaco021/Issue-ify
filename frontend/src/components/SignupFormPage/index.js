@@ -34,15 +34,15 @@ function SignupFormPage() {
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        {/* <label className="email__label_container">
+        <label className="email__label_container">
           Email
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-          /> */}
-        {/* </label> */}
+          />
+        </label>
         <label>
           Username
           <input
