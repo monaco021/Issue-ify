@@ -33,7 +33,7 @@ function App() {
           <Route path="/" exact>
             <SocialIssues />
           </Route>
-          <Route path="/:socialIssue" exact>
+          <Route path="/issues/:socialIssue" exact>
             <ListedArtists />
           </Route>
           <Route path="/artists/:spotifyId" exact>

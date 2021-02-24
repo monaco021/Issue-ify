@@ -22,7 +22,6 @@ router.get("/:albumId", async(req, res) => {
     )
 
     const albumTracks = await tracks.json();
-    console.log("tracks:", albumTracks)
     return res.json(albumTracks);
 
 })

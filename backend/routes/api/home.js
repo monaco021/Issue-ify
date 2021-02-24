@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get("/", async(req, res) => {
     const causes = await Issue.findAll();
-    return res.json(causes);
+    return res.json(causes); 
 });
 
 router.get("/:socialIssue", async(req, res) => {

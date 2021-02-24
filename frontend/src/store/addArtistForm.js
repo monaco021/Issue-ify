@@ -4,7 +4,7 @@
 
 // const addForm = (form) => ({
 //     type: ADD,
-//     form: form,
+//     form,
 // });
 
 // export const addArtistForm = (newForm) => async(dispatch) => {
@@ -24,7 +24,7 @@
 //     let newState
 //     switch(action.type) {
 //         case ADD: {
-//             newState = [...state, form: action.form]
+//             newState = [...state, action.form]
 //             return action.newState
 //         }
 //         default:
