@@ -1,14 +1,14 @@
 import { fetch } from "./csrf";
 
-const LOAD = "issues/LOAD";
+const LOAD = "forms/LOAD";
 
-const load = issues => ({
+const load = forms => ({
     type: LOAD,
-    issues,
+    forms,
 });
 
-export const getIssues = () => async dispatch => {
-    const res = await fetch("/api/");
+export const getForms = () => async dispatch => {
+    const res = await fetch("/api/form/submittedForms");
     if (res.ok) {
         dispatch(load(res.data));
     }
