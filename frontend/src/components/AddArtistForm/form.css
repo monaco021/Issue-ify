@@ -1,0 +1,18 @@
+.outsideDiv__h1_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.artist__form_container{
+    display: grid;
+    justify-content: center;
+
+}
+
+.artistForm__input_container{
+    height: 20vh;
+    border-radius: 20px;
+    width: 90vh;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,21 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {getForms} from "../../store/submittedForms";
-import { useParams } from "react-router-dom";
-import { get } from 'js-cookie';
+import {getForms} from "../../store/submittedForms"
+
 
 export default function SubmittedArtistForms() {
     const dispatch = useDispatch();
-    const forms = useSelector((state) => state.forms);
+    const subbedforms = useSelector((state) => state.forms);
 
     useEffect(() => {
-        dispatch(getForms);
+        console.log("useEffect dispatch")
+        dispatch(getForms());
     }, [dispatch]);
 
     return (
         <div>
+            <h1>Submmitted Forms from Users</h1>
             <div>
-                {forms && forms.map((form) => {
+                {subbedforms && subbedforms.map((form) => {
                     return (
                         <div>
                             <div>

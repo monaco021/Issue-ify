@@ -8,7 +8,9 @@ const load = forms => ({
 });
 
 export const getForms = () => async dispatch => {
+    console.log("before fetch")
     const res = await fetch("/api/form/submittedForms");
+    console.log("after fetch with res:", res)
     if (res.ok) {
         dispatch(load(res.data));
     }
