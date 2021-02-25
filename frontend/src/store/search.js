@@ -1,10 +1,10 @@
 import { fetch } from "./csrf";
 
-const LOAD = "artists/LOAD";
+const LOAD = "searchedArtists/LOAD";
 
-const load = artists => ({
+const load = searchedArtists => ({
     type: LOAD,
-    artists,
+    searchedArtists,
 });
 
 export const getSearchedArtists = (artistName) => async dispatch => {
@@ -17,7 +17,7 @@ export const getSearchedArtists = (artistName) => async dispatch => {
 const SearchedArtistsReducer = (state = [], action) => {
     switch(action.type) {
         case LOAD: {
-            return action.artists
+            return action.searchedArtists
         }
         default:
         return state;

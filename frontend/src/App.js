@@ -11,6 +11,7 @@ import ListedAlbums from "./components/Albums/index";
 import ListedTracks from "./components/Tracks/index";
 import ListedArtistForm from "./components/AddArtistForm/index";
 import SubmittedArtistForms from "./components/SubmittedForms/index"
+import SearchPage from "./components/Search/index"
 
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
           </Route>
           <Route path="/admin/sept2020aA/submittedForms" exact>
             <SubmittedArtistForms />
+          </Route>
+          <Route path="/search" exact>
+            <SearchPage />
           </Route>
         </Switch>
       )}
