@@ -6,12 +6,12 @@ const fetch = require("node-fetch");
 
 const router = express.Router();
 
-router.get("/:spotifyId", async(req, res) => {
-    const artist = req.params.spotifyId;
+router.get("/page", async(req, res) => {
+    // const artist = req.params.spotifyId;
 
     let newAuthToken = await getAuthToken();
 
-    const albums = await fetch(`https://api.spotify.com/v1/artists/${artist}/albums?include_groups=album,single&market=US`,
+    const search = await fetch("https://api.spotify.com/v1/search?q=tania%20bowra&type=artist&market=US",
         {
             headers: {
                 "Accept": "application/json",
@@ -20,8 +20,8 @@ router.get("/:spotifyId", async(req, res) => {
             }
         }
     )
-    const artistAlbums = await albums.json();
-    return res.json(artistAlbums);
+    const results = await search.json();
+    return res.json(results);
 })
 
 
