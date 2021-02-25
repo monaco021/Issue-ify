@@ -6,8 +6,8 @@ const fetch = require("node-fetch");
 
 const router = express.Router();
 
-router.get("/page", async(req, res) => {
-    // const artist = req.params.spotifyId;
+router.get("/:artistName", async(req, res) => {
+    // const artist = req.params.artistName;
 
     let newAuthToken = await getAuthToken();
 
