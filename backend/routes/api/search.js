@@ -7,11 +7,12 @@ const fetch = require("node-fetch");
 const router = express.Router();
 
 router.get("/:artistName", async(req, res) => {
-    // const artist = req.params.artistName;
+    const artist = req.params.artistName;
+    // artist.split
 
     let newAuthToken = await getAuthToken();
 
-    const search = await fetch("https://api.spotify.com/v1/search?q=d&type=artist&market=US",
+    const search = await fetch(`https://api.spotify.com/v1/search?q=${artist}&type=artist&market=US`,
         {
             headers: {
                 "Accept": "application/json",
