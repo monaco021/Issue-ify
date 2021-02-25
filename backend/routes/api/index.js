@@ -5,6 +5,7 @@ const homeRouter = require("./home.js");
 const albumRouter = require("./album.js");
 const trackRouter = require("./tracks.js");
 const formRouter = require("./form.js");
+const searchRouter = require("./search.js");
 
 // GET /api/set-token-cookie
 const asyncHandler = require('express-async-handler');
@@ -55,5 +56,7 @@ router.use("/artists", albumRouter);
 router.use("/album", trackRouter);
 
 router.use("/form", formRouter);
+
+router.use("/search", searchRouter);
 
 module.exports = router;
