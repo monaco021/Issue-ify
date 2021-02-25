@@ -11,7 +11,7 @@ router.get("/page", async(req, res) => {
 
     let newAuthToken = await getAuthToken();
 
-    const search = await fetch("https://api.spotify.com/v1/search?q=tania%20bowra&type=artist&market=US",
+    const search = await fetch("https://api.spotify.com/v1/search?q=d&type=artist&market=US",
         {
             headers: {
                 "Accept": "application/json",
