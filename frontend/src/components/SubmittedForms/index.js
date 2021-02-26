@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {getForms} from "../../store/submittedForms"
-
+import "./submittedForms.css"
 
 export default function SubmittedArtistForms() {
     const dispatch = useDispatch();
@@ -13,19 +13,19 @@ export default function SubmittedArtistForms() {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className="outter_sub_form__div_container">
             <h1>Submmitted Forms from Users</h1>
             <div>
                 {subbedforms && subbedforms.map((form) => {
                     return (
-                        <div>
-                            <div>
+                        <div className="inner_sub_form__div_container">
+                            <div className="sub_form_text__div_container">
                                 {form.artistName}
                             </div>
-                            <div>
+                            <div className="sub_form_text__div_container">
                                 {form.socialIssue}
                             </div>
-                            <div>
+                            <div className="sub_form_text__div_container">
                                 {form.reason}
                             </div>
                         </div>
