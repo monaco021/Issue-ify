@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {getTracks} from "../../store/tracks";
 import { useParams } from "react-router-dom";
-import spotifyPic from "./spotify.png"
 import {getAlbumImage} from "../../store/albumImage";
 
 
