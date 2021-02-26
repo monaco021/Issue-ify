@@ -7,7 +7,6 @@ import AlbumsReducer from "./albums.js";
 import TracksReducer from "./tracks.js";
 import FormReducer from "./submittedForms"
 import SearchedArtistsReducer from "./search"
-import ImageReducer from "./albumImage"
 
 const rootReducer = combineReducers({
   session,
@@ -17,7 +16,6 @@ const rootReducer = combineReducers({
   tracks: TracksReducer,
   forms: FormReducer,
   searchedArtists: SearchedArtistsReducer,
-  image: ImageReducer
 });
 
 let enhancer;
