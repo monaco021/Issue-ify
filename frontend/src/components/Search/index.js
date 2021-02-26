@@ -41,8 +41,8 @@ return (
         artists.artists.items.filter((artist) => artist.images && artist.images.length).map((artist) => {
             return (
                 <Link key={`${artist.id}`} to={`/artists/${artist.id}`}>
-                    <img className="artist__image_container" key={artist.images[0].url} src={artist.images[0].url}></img>
-                    <div className="artist__name_container" key={artist.name}>
+                    <img className="search__image_container" key={artist.images[0].url} src={artist.images[0].url}></img>
+                    <div className="search__name_container" key={artist.name}>
                                 {artist.name}
                     </div>
                 </Link>

@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
 import './Navigation.css';
+import { FaSearch, FaHome } from 'react-icons/fa';
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         {/* <ProfileButton user={sessionUser} /> */}
+        <NavLink to="/search"><FaSearch /></NavLink>
         <NavLink to="/form">Add Artist</NavLink>
         <button onClick={logout}>Log Out</button>
       </>
@@ -28,6 +30,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         {/* <LoginFormModal /> */}
+        <NavLink to="/search"><FaSearch /></NavLink>
         <NavLink to="/form">Add Artist</NavLink>
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
@@ -38,7 +41,7 @@ function Navigation({ isLoaded }){
   return (
     <div className="navBar__container" >
       <div className="navBar__links">
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/"><FaHome /></NavLink>
         {isLoaded && sessionLinks}
       </div>
     </div>
