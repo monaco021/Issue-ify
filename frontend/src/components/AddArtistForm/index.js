@@ -9,7 +9,7 @@ export default function ListedArtistForm() {
     const [artistName, setArtistName] = useState("");
     const [socialIssue, setSocialIssue] = useState("");
     const [reason, setReason] = useState("");
-    const [errors, setErrors] = useState([]);;
+    // const [errors, setErrors] = useState([]);;
 
 
     const handleSubmit = async (e) => {

@@ -26,5 +26,25 @@ router.get("/:albumId", async(req, res) => {
 
 })
 
+router.get("/image/:albumId", async(req, res) => {
+    const album = req.params.albumId;
+
+    let newAuthToken = await getAuthToken();
+
+    const albumImage = await fetch(`https://api.spotify.com/v1/albums/${album}`,
+        {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${newAuthToken}`
+            }
+        }
+    )
+
+    const image = await albumImage.json();
+    return res.json(image);
+
+})
+
 
 module.exports = router;

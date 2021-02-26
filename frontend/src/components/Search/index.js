@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { searchItems } from '../../store/search';
-import { useHistory } from 'react-router-dom';
 import { getSearchedArtists } from "../../store/search";
 import { Link } from 'react-router-dom';
 import "./search.css"
@@ -9,7 +7,7 @@ import "./search.css"
 
 export default function SearchPage () {
   const dispatch = useDispatch();
-  const history = useHistory();
+
   
   const artists = useSelector(state => state.searchedArtists)
 
@@ -42,7 +40,7 @@ return (
         artists.artists.items.filter((artist) => artist.images && artist.images.length).map((artist) => {
             return (
                 <Link key={`${artist.id}`} to={`/artists/${artist.id}`}>
-                    <img className="artist__image_container" key={artist.images[0].url} src={artist.images[0].url}></img>
+                    <img className="artist__image_container" key={artist.images[0].url} src={artist.images[0].url} alt="search" ></img>
                     <div className="artist__name_container" key={artist.name}>
                                 {artist.name}
                     </div>

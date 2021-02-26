@@ -24,7 +24,7 @@ export default function ListedArtists() {
                 {singers && singers.map((singer) => {
                     return (
                         <Link key={`${singer.id}`} to={`/artists/${singer.id}`}>
-                            <img className="artist__image_container" key={singer.images[0].url} src={singer.images[0].url}></img>
+                            <img className="artist__image_container" key={singer.images[0].url} src={singer.images[0].url} alt="artist"></img>
                             <div className="artist__name_container" key={singer.name}>
                                 {singer.name}
                             </div>

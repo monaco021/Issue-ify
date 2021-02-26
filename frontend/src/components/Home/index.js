@@ -17,7 +17,7 @@ export default function SocialIssues () {
             {causes && causes.map((cause) => {
               return (
                 <Link key={`${cause.id}`} to={`/issues/${cause.socialIssue}`}>
-                  <img className="issue__image_container" key={cause.imageUrl} src={cause.imageUrl} />
+                  <img className="issue__image_container" key={cause.imageUrl} src={cause.imageUrl} alt="social issue"/>
                   <div className="issue__text_container" >
                     {cause.socialIssue}
                   </div>

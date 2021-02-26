@@ -21,7 +21,7 @@ export default function ListedAlbums() {
            {albums && albums.map((album) => {
                return (
                    <Link key={album.id} to={`/album/${album.id}`}>
-                       <img className="album__image_container" key={album.images[0].url} src={album.images[0].url} />
+                       <img className="album__image_container" key={album.images[0].url} src={album.images[0].url} alt="spotify album" />
                        <div className="album__name_container" key={album.name}>
                            {album.name}
                        </div>
