@@ -4,8 +4,8 @@ import { searchItems } from '../../store/search';
 import { useHistory } from 'react-router-dom';
 import { getSearchedArtists } from "../../store/search";
 import { Link } from 'react-router-dom';
+import "./search.css"
 
-let artistSet = new Set();
 
 export default function SearchPage () {
   const dispatch = useDispatch();
@@ -27,8 +27,9 @@ export default function SearchPage () {
 
 return (
   <div>
-    <form onSubmit={search}>
+    <form className="search__form_container" onSubmit={search}>
       <input
+      className="search__input_container"
         value={input}
         onChange={(e) => {
           setInput(e.target.value);

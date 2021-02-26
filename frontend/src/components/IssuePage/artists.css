@@ -17,3 +17,10 @@
     font-size: 20px;
     font-family: emoji;
 }
+
+.social_Issue__text_container{
+    background-color: lavenderblush;
+    font-size: 30px;
+    font-family: fantasy;
+    padding-bottom: 15px;
+}

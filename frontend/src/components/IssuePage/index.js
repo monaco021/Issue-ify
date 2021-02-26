@@ -17,7 +17,7 @@ export default function ListedArtists() {
 
     return (
         <>
-            <div>
+            <div className="social_Issue__text_container">
                 {socialIssue}
             </div>
             <div className="artist__list_container">
