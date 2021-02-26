@@ -36,13 +36,16 @@ return (
       <button type="submit">Search</button>
     </form>
     <div>
-        {artists.artists.items.map((artist) => {
+        { artists.artists ?
+        artists.artists.items.map((artist) => {
             return (
                 <Link key={`${artist.id}`} to={`/artists/${artist.id}`}>
                     <img className="artist__image_container" key={artist.images[0].url} src={artist.images[0].url}></img>
                 </Link>
             )
-        })}
+        }) 
+        : <h1>no results</h1>
+    }
     </div>
   </div>
   );
