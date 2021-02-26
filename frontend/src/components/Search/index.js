@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { getSearchedArtists } from "../../store/search";
 import { Link } from 'react-router-dom';
 
+let artistSet = new Set();
 
 export default function SearchPage () {
   const dispatch = useDispatch();
@@ -37,10 +38,13 @@ return (
     </form>
     <div>
         { artists.artists ?
-        artists.artists.items.map((artist) => {
+        artists.artists.items.filter((artist) => artist.images && artist.images.length).map((artist) => {
             return (
                 <Link key={`${artist.id}`} to={`/artists/${artist.id}`}>
                     <img className="artist__image_container" key={artist.images[0].url} src={artist.images[0].url}></img>
+                    <div className="artist__name_container" key={artist.name}>
+                                {artist.name}
+                    </div>
                 </Link>
             )
         }) 
