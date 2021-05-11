@@ -11,7 +11,7 @@ router.get("/", async(req, res) => {
     const causes = await Issue.findAll();
     return res.json(causes); 
 });
-
+//need to rethink and see if I can use a switch case 
 router.get("/:socialIssue", async(req, res) => {
     const issue = req.params.socialIssue;
     let newAuthToken = await getAuthToken();
