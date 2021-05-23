@@ -5,6 +5,8 @@ import {getArtists} from "../../store/issuePage"
 import { useParams } from "react-router-dom";
 import "./artists.css"
 
+//need to make componets more dynamic/smaller 
+
 export default function ListedArtists() {
     const dispatch = useDispatch();
     const singers = useSelector((state) => state.artists.artists);
