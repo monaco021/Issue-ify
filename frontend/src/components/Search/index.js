@@ -4,7 +4,7 @@ import { getSearchedArtists } from "../../store/search";
 import { Link } from 'react-router-dom';
 import "./search.css"
 
-
+//need to refactor, is not working properly 
 export default function SearchPage () {
   const dispatch = useDispatch();
 
