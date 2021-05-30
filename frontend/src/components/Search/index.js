@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import "./search.css"
 
 //need to refactor, is not working properly 
+// backend problem and frontend not connecting 
 export default function SearchPage () {
   const dispatch = useDispatch();
 
