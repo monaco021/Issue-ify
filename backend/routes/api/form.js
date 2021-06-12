@@ -6,6 +6,8 @@ const fetch = require("node-fetch");
 const { handleValidationErrors } = require('../../utils/validation');
 const { check } = require('express-validator');
 
+//I want to work on error handling here
+
 const router = express.Router();
 const validateForm = [
     check('artistName')
